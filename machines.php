@@ -167,7 +167,7 @@
                     if (strpos($name,"entropy1.") !== FALSE) 
                     {
                         echo "<h3 class=\"machineName\">entropy1 Data RAID</h3>";
-                        $smartfile1 = "smartctl/entropy1-sdh.txt"; $smartdisk1 = "/dev/sdh";
+                        $smartfile1 = "smartctl/entropy1-sde.txt"; $smartdisk1 = "/dev/sde";
                         $smartfile2 = "smartctl/entropy1-sdf.txt"; $smartdisk2 = "/dev/sdf";
                         $smartEnabledDisks = 2;
                         $MNAME = "entropy1";
@@ -445,7 +445,7 @@
                                     continue;
                                 }
                                 // Added the "Health Status" & "OK" in the if statement for entropy1's sde SMARTCTL
-                                if(strpos($line,"overall-health")!==FALSE || strpos($line, "Health Status")!==FALSE)
+                                if(strpos($line,"overall-health")!==FALSE || strpos($line, "Status")!==FALSE)
                                 {
                                     if(strpos($line,"PASSED") || strpos($line, "OK"))
                                     {
