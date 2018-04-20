@@ -412,7 +412,8 @@
                                         break;
                                     }
                                 }
-                                if (strpos($line,"No Errors Logged")!==FALSE) 
+                                // Added "Errors Corrected" in the case that there is no errors logged
+                                if (strpos($line,"No Errors Logged")!==FALSE || strpos($line, "Errors Corrected")!==FALSE) 
                                 {
                                     $errorsLogged=false;
                                 }
