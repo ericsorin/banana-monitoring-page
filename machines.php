@@ -445,7 +445,7 @@
                                     continue;
                                 }
                                 // Added the "Health Status" & "OK" in the if statement for entropy1's sde SMARTCTL
-                                if(strpos($line,"overall-health")!==FALSE || strpos($line, "Health")!==FALSE)
+                                if(strpos($line,"overall-health")!==FALSE || strpos($line, "Health Status:")!==FALSE)
                                 {
                                     if(strpos($line,"PASSED") || strpos($line, "OK"))
                                     {
