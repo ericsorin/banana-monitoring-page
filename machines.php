@@ -275,9 +275,7 @@
                                         $pingOutput = exec("ping $nameTemp -c 1 -W 1", $pingTemp, $pingReturn);
                                         if ($pingReturn != 0) 
                                         {
-                                            //echo "<script> alert('" . $nameTemp . " is Unpingable!!!'); </script>";
                                             echo "<li style=\"font-size: 20pt;\" class=\"error\"> SYSTEM IS UNPINGABLE!!! </li>";
-
                                         }
                                     } 
                                     else 
@@ -286,9 +284,7 @@
                                         $pingOutput = exec("ping $MNAME -c 1 -W 1", $pingTemp, $pingReturn);
                                         if ($pingReturn != 0) 
                                         {
-                                            //echo "<script> alert('" . $nameTemp . " is Unpingable!!!'); </scri$
                                             echo "<li style=\"font-size: 20pt;\" class=\"error\"> SYSTEM IS UNPINGABLE!!! </li>";
-
                                         }
                                     }
                                 } 
@@ -448,9 +444,10 @@
                                     }
                                     continue;
                                 }
-                                if(strpos($line,"overall-health")!==FALSE )
+                                // Added the "Health Status" & "OK" in the if statement for entropy1's sde SMARTCTL
+                                if(strpos($line,"overall-health")!==FALSE || strpos($line, "Health Status")!==FALSE)
                                 {
-                                    if(strpos($line,"PASSED"))
+                                    if(strpos($line,"PASSED") || strpos($line, "OK"))
                                     {
                                         echo "<li class=\"active\">".$line."</li>";
                                     }
